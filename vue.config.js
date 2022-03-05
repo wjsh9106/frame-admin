@@ -8,7 +8,13 @@ function resolve(dir) {
 }
 const webpack = require('webpack')
 module.exports = {
+  outputDir: './dist', // 打包导出地址
   configureWebpack: {
+    resolve: {
+      alias: {
+        views: '@/views'
+      }
+    },
     plugins: [
       AutoImport({
         resolvers: [ElementPlusResolver()]
@@ -63,5 +69,28 @@ module.exports = {
         symbolId: 'icon-[name]'
       })
       .end()
+  },
+  devServer: {
+    // 自动打开浏览器
+    open: false,
+    // 设置主机地址
+    host: 'localhost',
+    // 设置默认端口
+    port: 8080,
+    https: false,
+    // 设置代理
+    proxy: {
+      '/api': {
+        // 目标 API 地址
+        target: 'https://lianghj.top:8888/api/private/v1/',
+        // 如果要代理 websockets
+        // ws: true,
+        // 将主机标头的原点更改为目标URL
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
+    }
   }
 }
