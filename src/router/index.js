@@ -9,7 +9,20 @@ const routes = [
   {
     path: '/',
     name: '/',
-    component: () => import('../layout')
+    component: () => import('../layout'),
+    redirect: '/user',
+    children: [
+      {
+        path: 'user',
+        name: 'user',
+        component: () => import('@/views/user/index.vue')
+      },
+      {
+        path: 'role',
+        name: 'role',
+        component: () => import('@/views/role/index.vue')
+      }
+    ]
   }
 ]
 

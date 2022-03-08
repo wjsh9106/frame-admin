@@ -82,7 +82,7 @@ module.exports = {
     proxy: {
       '/api': {
         // 目标 API 地址
-        target: 'https://lianghj.top:8888/api/private/v1/',
+        target: 'http://localhost:8081/',
         // 如果要代理 websockets
         // ws: true,
         // 将主机标头的原点更改为目标URL
