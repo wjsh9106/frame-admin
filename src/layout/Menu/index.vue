@@ -25,7 +25,7 @@
         <el-icon>
           <component :is="it.icon" />
         </el-icon>
-        {{ it.name }}
+        {{ $t(`menus.${it.path.replace('\/', '')}`) }}
       </el-menu-item>
     </el-sub-menu>
   </el-menu>
