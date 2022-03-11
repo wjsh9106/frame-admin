@@ -22,7 +22,7 @@ const breadcrumbList = ref([])
 const initBreadcrumbList = () => {
   // 当前路由的路由表
   breadcrumbList.value = route.matched
-  console.log(route.matched)
+  // console.log(route.matched)
 }
 const handleRedirect = (path) => {
   router.push(path)

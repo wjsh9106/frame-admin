@@ -10,16 +10,16 @@ const routes = [
     path: '/',
     name: '/',
     component: () => import('../layout'),
-    redirect: '/user',
+    redirect: '/users',
     children: [
       {
-        path: 'user',
-        name: 'user',
+        path: 'users',
+        name: 'users',
         component: () => import('@/views/user/index.vue')
       },
       {
-        path: 'role',
-        name: 'role',
+        path: 'roles',
+        name: 'roles',
         component: () => import('@/views/role/index.vue')
       }
     ]

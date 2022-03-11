@@ -18,14 +18,14 @@ service.interceptors.request.use(
 
 service.interceptors.response.use(
   (response) => {
-    console.log(response.headers)
-    console.log('ISREFRESH', response.headers.isrefresh)
+    // console.log(response.headers)
+    // console.log('ISREFRESH', response.headers.isrefresh)
     // token过期，但登录未失效，更新本地token
     if (response.headers.isrefresh) {
-      console.log('更新token：', response.headers.authorization)
-      console.log('旧token：', store.getters.token)
+      // console.log('更新token：', response.headers.authorization)
+      // console.log('旧token：', store.getters.token)
       store.dispatch('app/updateToken', response.headers.authorization)
-      console.log('新token：', store.getters.token)
+      // console.log('新token：', store.getters.token)
     }
     // 获取返回信息中的 data 属性
     const { data } = response
