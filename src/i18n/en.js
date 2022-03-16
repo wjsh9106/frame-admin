@@ -23,7 +23,7 @@ export default {
     userName: 'userName',
     email: 'email',
     phoneNum: 'phoneNum',
-    status: 'status',
+    blStatus: 'status',
     createTime: 'createTime',
     action: 'action',
     search: 'search',

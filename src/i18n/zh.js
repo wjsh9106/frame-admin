@@ -23,7 +23,7 @@ export default {
     userName: '用户名',
     email: '邮箱',
     phoneNum: '手机',
-    status: '状态',
+    blStatus: '状态',
     createTime: '创建时间',
     action: '操作',
     search: '搜索',

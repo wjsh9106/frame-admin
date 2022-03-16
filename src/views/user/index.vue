@@ -12,7 +12,9 @@
       <el-button type="primary" :icon="Search" @click="initUserList">{{
         $t('table.search')
       }}</el-button>
-      <el-button type="primary">{{ $t('table.adduser') }}</el-button>
+      <el-button type="primary" @click="handleDialogValue">{{
+        $t('table.adduser')
+      }}</el-button>
     </el-row>
 
     <el-table :data="tableData" stripe style="width: 100%">
@@ -23,8 +25,8 @@
         v-for="(item, index) in options"
         :key="index"
       >
-        <template v-slot="{ row }" v-if="item.prop === 'status'">
-          <el-switch v-model="row.status" />
+        <template v-slot="{ row }" v-if="item.prop === 'blStatus'">
+          <el-switch v-model="row.blStatus" @change="changeState(row)" />
         </template>
         <template #default v-else-if="item.prop === 'action'">
           <el-button type="primary" size="small" :icon="Edit"></el-button>
@@ -47,14 +49,23 @@
     >
     </el-pagination>
   </el-card>
+  <Dialog
+    v-model="dialogVisible"
+    :dialogTitle="dialogTitle"
+    v-if="dialogVisible"
+  />
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import { Search, Edit, Setting, Delete } from '@element-plus/icons-vue'
-import { getUsers } from '@/api/user'
+import { getUsers, changeUserStatus } from '@/api/user'
 import { options } from './options'
+import { ElMessage } from 'element-plus'
+import { useI18n } from 'vue-i18n'
+import Dialog from './components/dialog.vue'
 
+const i18n = useI18n()
 const queryForm = ref({
   query: '',
   pageNum: 1,
@@ -66,6 +77,9 @@ const queryForm = ref({
 const total = ref(0)
 
 const tableData = ref([])
+
+const dialogVisible = ref(false)
+const dialogTitle = ref('')
 
 // 参数请求格式
 // {
@@ -97,6 +111,20 @@ const handleSizeChange = (pageSize) => {
 const handleCurrentChange = (pageNum) => {
   queryForm.value.pageNum = pageNum
   initUserList()
+}
+
+const changeState = async (info) => {
+  await changeUserStatus(info.id, info.blStatus, info.status)
+  ElMessage({
+    message: i18n.t('message.updeteSuccess'),
+    type: 'success'
+  })
+  initUserList()
+}
+
+const handleDialogValue = () => {
+  dialogTitle.value = '添加用户'
+  dialogVisible.value = true
 }
 </script>
 

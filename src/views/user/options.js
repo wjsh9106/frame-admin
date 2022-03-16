@@ -16,8 +16,8 @@ export const options = [
     prop: 'email'
   },
   {
-    label: 'status',
-    prop: 'status'
+    label: 'blStatus',
+    prop: 'blStatus'
   },
   {
     label: 'createTime',
