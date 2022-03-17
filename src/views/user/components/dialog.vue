@@ -22,7 +22,7 @@
         <el-input v-model="form.email" />
       </el-form-item>
       <el-form-item label="描述">
-        <el-input v-model="form.description" />
+        <el-input v-model="form.description" type="textarea" />
       </el-form-item>
     </el-form>
     <template #footer>
@@ -48,22 +48,29 @@ defineProps({
   }
 })
 
-const emits = defineEmits(['update:modelValue'])
+const emits = defineEmits(['update:modelValue', 'initUserList'])
 
 const handleClose = () => {
   emits('update:modelValue', false)
 }
 
-const handleConfirm = async () => {
-  await addUser(form.value)
-  ElMessage({
-    message: i18n.global.t('message.updeteSuccess'),
-    type: 'success'
-  })
-  handleClose()
-}
-
 const formRef = ref(null)
+const handleConfirm = async () => {
+  formRef.value.validate(async (valid) => {
+    if (valid) {
+      await addUser(form.value)
+      ElMessage({
+        message: i18n.global.t('message.updeteSuccess'),
+        type: 'success'
+      })
+      handleClose()
+      emits('initUserList')
+    } else {
+      console.log('error submit!!')
+      return false
+    }
+  })
+}
 const form = ref({
   realName: '',
   userName: '',
