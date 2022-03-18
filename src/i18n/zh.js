@@ -31,7 +31,9 @@ export default {
     placeholder: '请输入搜索的用户姓名'
   },
   message: {
-    updeteSuccess: '更新成功'
+    updeteSuccess: '更新成功',
+    deleteSuccess: '删除成功',
+    deleteCanceled: '删除取消'
   },
   driver: {
     doneBtnText: '完成',

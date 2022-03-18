@@ -13,15 +13,18 @@ export const options = [
   },
   {
     label: 'email',
-    prop: 'email'
+    prop: 'email',
+    width: 200
   },
   {
     label: 'blStatus',
-    prop: 'blStatus'
+    prop: 'blStatus',
+    width: 100
   },
   {
     label: 'createTime',
-    prop: 'createTime'
+    prop: 'createTime',
+    width: 200
   },
   {
     label: 'action',

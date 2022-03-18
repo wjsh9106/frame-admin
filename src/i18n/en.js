@@ -31,7 +31,9 @@ export default {
     placeholder: 'Please enter a user name to search for'
   },
   message: {
-    updeteSuccess: 'update successfully'
+    updeteSuccess: 'update successfully',
+    deleteSuccess: 'delete successfully',
+    deleteCanceled: 'delete canceled'
   },
   driver: {
     doneBtnText: 'done',

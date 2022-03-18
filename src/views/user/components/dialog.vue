@@ -12,7 +12,11 @@
       <el-form-item label="用户名" prop="userName">
         <el-input v-model="form.userName" />
       </el-form-item>
-      <el-form-item label="密码" prop="password">
+      <el-form-item
+        label="密码"
+        prop="password"
+        v-if="dialogTitle === '添加用户'"
+      >
         <el-input v-model="form.password" type="password" />
       </el-form-item>
       <el-form-item label="手机" prop="phoneNum">
@@ -35,42 +39,25 @@
 </template>
 
 <script setup>
-import { defineEmits, ref, defineProps } from 'vue'
-import { addUser } from '@/api/user'
+import { defineEmits, ref, defineProps, watch } from 'vue'
+import { saveUser } from '@/api/user'
 import { ElMessage } from 'element-plus'
 import i18n from '@/i18n'
 
-defineProps({
+const props = defineProps({
   dialogTitle: {
     type: String,
     default: '',
     required: true
+  },
+  dialogTableValue: {
+    type: Object,
+    default: () => {}
   }
 })
 
-const emits = defineEmits(['update:modelValue', 'initUserList'])
-
-const handleClose = () => {
-  emits('update:modelValue', false)
-}
-
 const formRef = ref(null)
-const handleConfirm = async () => {
-  formRef.value.validate(async (valid) => {
-    if (valid) {
-      await addUser(form.value)
-      ElMessage({
-        message: i18n.global.t('message.updeteSuccess'),
-        type: 'success'
-      })
-      handleClose()
-      emits('initUserList')
-    } else {
-      console.log('error submit!!')
-      return false
-    }
-  })
-}
+
 const form = ref({
   realName: '',
   userName: '',
@@ -111,5 +98,37 @@ const rules = ref({
     }
   ]
 })
+
+watch(
+  () => props.dialogTableValue,
+  () => {
+    // console.log(props.dialogTableValue)
+    form.value = props.dialogTableValue
+  },
+  { deep: true, immediate: true }
+)
+
+const emits = defineEmits(['update:modelValue', 'initUserList'])
+
+const handleClose = () => {
+  emits('update:modelValue', false)
+}
+
+const handleConfirm = () => {
+  formRef.value.validate(async (valid) => {
+    if (valid) {
+      await saveUser(form.value)
+      ElMessage({
+        message: i18n.global.t('message.updeteSuccess'),
+        type: 'success'
+      })
+      handleClose()
+      emits('initUserList')
+    } else {
+      console.log('error submit!!')
+      return false
+    }
+  })
+}
 </script>
 <style lang="scss" scoped></style>

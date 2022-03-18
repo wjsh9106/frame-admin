@@ -15,10 +15,17 @@ export const changeUserStatus = (uid, type, status) => {
   })
 }
 
-export const addUser = (data) => {
+export const saveUser = (data) => {
   return request({
-    url: '/user/addUser',
+    url: '/user/saveUser',
     method: 'POST',
     data
+  })
+}
+
+export const deleteUser = (uid) => {
+  return request({
+    url: `/user/delUser/${uid}`,
+    method: 'DELETE'
   })
 }
