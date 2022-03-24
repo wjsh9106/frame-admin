@@ -32,13 +32,13 @@
 </template>
 
 <script setup>
-import { menuList } from '@/api/menu'
+import { leftMenus } from '@/api/menu'
 import { ref } from 'vue'
 
 const defaultActive = ref(sessionStorage.getItem('path') || '/user')
 const menusList = ref([])
 const initMenusList = async () => {
-  menusList.value = await menuList()
+  menusList.value = await leftMenus()
 }
 initMenusList()
 

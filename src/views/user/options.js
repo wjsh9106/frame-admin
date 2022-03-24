@@ -21,11 +21,11 @@ export const options = [
     prop: 'blStatus',
     width: 100
   },
-  {
-    label: 'createTime',
-    prop: 'createTime',
-    width: 200
-  },
+  // {
+  //   label: 'createTime',
+  //   prop: 'createTime',
+  //   width: 200
+  // },
   {
     label: 'action',
     prop: 'action',

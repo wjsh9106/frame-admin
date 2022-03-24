@@ -4,16 +4,16 @@
     <el-row :gutter="20" class="header">
       <el-col :span="7">
         <el-input
-          :placeholder="$t('table.placeholder')"
+          :placeholder="$t('tableUser.placeholder')"
           clearable
           v-model="queryForm.query"
         ></el-input>
       </el-col>
       <el-button type="primary" :icon="Search" @click="initUserList">{{
-        $t('table.search')
+        $t('tableUser.search')
       }}</el-button>
       <el-button type="primary" @click="handleDialogValue()">{{
-        $t('table.adduser')
+        $t('tableUser.adduser')
       }}</el-button>
     </el-row>
 
@@ -21,7 +21,7 @@
       <el-table-column
         :width="item.width"
         :prop="item.prop"
-        :label="$t(`table.${item.label}`)"
+        :label="$t(`tableUser.${item.label}`)"
         v-for="(item, index) in options"
         :key="index"
       >
@@ -150,7 +150,7 @@ const handleDialogValue = (row) => {
 }
 
 const delUser = (row) => {
-  ElMessageBox.confirm(i18n.t('dialog.deleteTitle'), '删除用户', {
+  ElMessageBox.confirm(i18n.t('dialog.deleteTitleUser'), '删除用户', {
     confirmButtonText: '确认',
     cancelButtonText: '取消',
     type: 'warning'

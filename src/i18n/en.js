@@ -2,9 +2,10 @@ export default {
   menus: {
     '/': 'home',
     home: 'home',
-    users: 'users list',
-    roles: 'roles list',
+    users: 'user list',
+    roles: 'role list',
     menus: 'permission list',
+    depts: 'dept list',
     goods: 'product list',
     params: 'sorting list',
     categories: 'goods category',
@@ -16,9 +17,11 @@ export default {
     btnTitle: 'login'
   },
   dialog: {
-    deleteTitle: 'Are you sure you want to delete the user '
+    deleteTitle: 'Are you sure you want to delete the user ',
+    deleteTitleMenu: 'Are you sure you want to delete the menu ',
+    deleteTitleDept: 'Are you sure you want to delete the dept '
   },
-  table: {
+  tableUser: {
     realName: 'realName',
     userName: 'userName',
     email: 'email',
@@ -29,6 +32,32 @@ export default {
     search: 'search',
     adduser: 'add user',
     placeholder: 'Please enter a user name to search for'
+  },
+  tableRole: {
+    name: 'name',
+    sort: 'sort',
+    description: 'description',
+    blStatus: 'status',
+    action: 'action',
+    search: 'search',
+    adduser: 'add urole',
+    placeholder: 'Please enter a role name to search for'
+  },
+  tableMenu: {
+    name: 'name',
+    path: 'path',
+    type: 'type',
+    perms: 'perms',
+    action: 'action',
+    addmenu: 'add menu'
+  },
+  tableDept: {
+    deptName: 'dept name',
+    leader: 'leader',
+    phone: 'phone',
+    email: 'eaail',
+    action: 'action',
+    adddept: 'add dept'
   },
   message: {
     updeteSuccess: 'update successfully',
