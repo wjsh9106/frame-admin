@@ -7,7 +7,7 @@ export default {
     menus: 'permission list',
     depts: 'dept list',
     goods: 'product list',
-    params: 'sorting list',
+    charts: 'chart list',
     categories: 'goods category',
     orders: 'order list',
     reports: 'data report'

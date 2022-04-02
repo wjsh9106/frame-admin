@@ -7,7 +7,7 @@ export default {
     menus: '权限管理',
     depts: '部门管理',
     goods: '商品列表',
-    params: '分类参数',
+    charts: '图表展示',
     categories: '商品分类',
     orders: '订单列表',
     reports: '数据报表'
