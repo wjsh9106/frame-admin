@@ -36,6 +36,26 @@ const routes = [
         path: 'charts',
         name: 'charts',
         component: () => import('@/views/echarts/index.vue')
+      },
+      {
+        path: 'maps',
+        name: 'maps',
+        component: () => import('@/views/echarts/map.vue')
+      },
+      {
+        path: 'sandian',
+        name: 'sandian',
+        component: () => import('@/views/echarts/sandian.vue')
+      },
+      {
+        path: 'xiazuan',
+        name: 'xiazuan',
+        component: () => import('@/views/echarts/xiazuan.vue')
+      },
+      {
+        path: 'xzsd',
+        name: 'xzsd',
+        component: () => import('@/views/echarts/xzsd.vue')
       }
     ]
   }

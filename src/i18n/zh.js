@@ -6,11 +6,11 @@ export default {
     roles: '角色管理',
     menus: '权限管理',
     depts: '部门管理',
-    goods: '商品列表',
-    charts: '图表展示',
-    categories: '商品分类',
-    orders: '订单列表',
-    reports: '数据报表'
+    maps: '中国地图',
+    charts: '简单图表',
+    sandian: '散点地图',
+    xiazuan: '下钻地图',
+    xzsd: '下钻散点地图'
   },
   login: {
     title: '用户登录',

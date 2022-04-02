@@ -6,11 +6,11 @@ export default {
     roles: 'role list',
     menus: 'permission list',
     depts: 'dept list',
-    goods: 'product list',
-    charts: 'chart list',
-    categories: 'goods category',
-    orders: 'order list',
-    reports: 'data report'
+    maps: 'china map',
+    charts: 'simple chart',
+    sandian: 'scatter map',
+    xiazuan: 'drill down map',
+    xzsd: 'map'
   },
   login: {
     title: 'user login',
