@@ -41,6 +41,7 @@ export default {
     logout({ commit }) {
       commit('setToken', '')
       localStorage.clear()
+      sessionStorage.clear()
       router.replace('/login')
     },
     updateToken({ commit }, token) {
