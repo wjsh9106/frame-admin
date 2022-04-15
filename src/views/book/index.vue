@@ -34,8 +34,14 @@
           </el-popover>
         </template>
         <template v-slot="{ row }" v-else-if="item.prop === 'bookIntro'">
-          {{ row.bookIntro.substr(0, 100) }}
-          <span v-if="row.bookIntro.length > 100">......</span>
+          <!-- {{ row.bookIntro.substr(0, 100) }}
+          <span v-if="row.bookIntro.length > 100">......</span> -->
+          <el-popover placement="right" trigger="hover">
+            <template #reference>
+              {{ row.bookIntro.substr(0, 100) }}......
+            </template>
+            {{ row.bookIntro }}
+          </el-popover>
         </template>
       </el-table-column>
     </el-table>
