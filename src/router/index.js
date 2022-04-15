@@ -56,6 +56,11 @@ const routes = [
         path: 'xzsd',
         name: 'xzsd',
         component: () => import('@/views/echarts/xzsd.vue')
+      },
+      {
+        path: 'books',
+        name: 'books',
+        component: () => import('@/views/book/index.vue')
       }
     ]
   }

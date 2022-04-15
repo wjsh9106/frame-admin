@@ -10,7 +10,8 @@ export default {
     charts: '简单图表',
     sandian: '散点地图',
     xiazuan: '下钻地图',
-    xzsd: '下钻散点地图'
+    xzsd: '下钻散点地图',
+    books: '小说管理'
   },
   login: {
     title: '用户登录',
@@ -58,6 +59,17 @@ export default {
     email: '邮箱',
     action: '操作',
     adddept: '添加部门'
+  },
+  tableBook: {
+    bookCover: '封面',
+    bookName: '书名',
+    bookAuthor: '作者',
+    bookTag: '类型',
+    bookIntro: '介绍',
+    action: '操作',
+    search: '搜索',
+    adduser: '添加用户',
+    placeholder: '请输入搜索的用户姓名'
   },
   message: {
     updeteSuccess: '更新成功',

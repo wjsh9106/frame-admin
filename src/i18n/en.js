@@ -10,7 +10,8 @@ export default {
     charts: 'simple chart',
     sandian: 'scatter map',
     xiazuan: 'drill down map',
-    xzsd: 'map'
+    xzsd: 'map',
+    books: 'book list'
   },
   login: {
     title: 'user login',
@@ -58,6 +59,17 @@ export default {
     email: 'eaail',
     action: 'action',
     adddept: 'add dept'
+  },
+  tableBook: {
+    bookCover: 'cover',
+    bookName: 'name',
+    bookAuthor: 'author',
+    bookTag: 'tag',
+    bookIntro: 'intro',
+    action: 'action',
+    search: 'search',
+    adduser: 'add user',
+    placeholder: 'Please enter a user name to search for'
   },
   message: {
     updeteSuccess: 'update successfully',

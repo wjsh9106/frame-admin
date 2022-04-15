@@ -35,7 +35,12 @@
             :icon="Edit"
             @click="handleDialogValue(row)"
           ></el-button>
-          <el-button type="warning" size="small" :icon="Setting"></el-button>
+          <el-button
+            type="warning"
+            size="small"
+            :icon="Setting"
+            @click="setRole(row)"
+          ></el-button>
           <el-button
             type="danger"
             size="small"
@@ -67,6 +72,7 @@
     @initUserList="initUserList"
     :dialogTableValue="dialogTableValue"
   />
+  <Tree v-model="treeVisible" :treeUserId="treeUserId" v-if="treeVisible" />
 </template>
 
 <script setup>
@@ -78,6 +84,7 @@ import { ElMessage, ElMessageBox } from 'element-plus'
 import { useI18n } from 'vue-i18n'
 import Dialog from './components/dialog.vue'
 import { isNull } from '@/utils/filters'
+import Tree from './components/tree.vue'
 
 const i18n = useI18n()
 const queryForm = ref({
@@ -169,6 +176,14 @@ const delUser = (row) => {
         message: i18n.t('message.deleteCanceled')
       })
     })
+}
+
+const treeVisible = ref(false)
+const treeUserId = ref()
+
+const setRole = (row) => {
+  treeVisible.value = true
+  treeUserId.value = row.id
 }
 </script>
 

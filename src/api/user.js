@@ -29,3 +29,18 @@ export const deleteUser = (uid) => {
     method: 'DELETE'
   })
 }
+
+export const roleInfo = (userId) => {
+  return request({
+    url: `/user/roleInfo/${userId}`,
+    method: 'GET'
+  })
+}
+
+export const bindRoles = (data) => {
+  return request({
+    url: '/user/bindRoles',
+    method: 'POST',
+    data
+  })
+}
