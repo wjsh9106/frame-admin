@@ -61,6 +61,16 @@ const routes = [
         path: 'books',
         name: 'books',
         component: () => import('@/views/book/index.vue')
+      },
+      {
+        path: 'chapterTitles',
+        name: 'chapterTitles',
+        component: () => import('@/views/book/chapterTitles.vue')
+      },
+      {
+        path: 'chapterInfo',
+        name: 'chapterInfo',
+        component: () => import('@/views/book/chapterInfo.vue')
       }
     ]
   }

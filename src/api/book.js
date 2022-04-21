@@ -7,3 +7,17 @@ export const getBooks = (data) => {
     data
   })
 }
+
+export const getChapterTitles = (bookId) => {
+  return request({
+    url: `/chapter/chapterTitles/${bookId}`,
+    method: 'GET'
+  })
+}
+
+export const getChapterInfo = (chapterId) => {
+  return request({
+    url: `/chapter/chapterInfo/${chapterId}`,
+    method: 'GET'
+  })
+}

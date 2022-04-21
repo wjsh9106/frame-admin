@@ -11,7 +11,9 @@ export default {
     sandian: 'scatter map',
     xiazuan: 'drill down map',
     xzsd: 'map',
-    books: 'book list'
+    books: 'book list',
+    chapterTitles: 'chapter list',
+    chapterInfo: 'chapter info'
   },
   login: {
     title: 'user login',

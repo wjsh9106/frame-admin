@@ -43,6 +43,11 @@
             {{ row.bookIntro }}
           </el-popover>
         </template>
+        <template #default="{ row }" v-else-if="item.prop === 'action'">
+          <el-button type="primary" size="small" @click="showChapterTitles(row)"
+            >章节列表</el-button
+          >
+        </template>
       </el-table-column>
     </el-table>
     <el-pagination
@@ -74,6 +79,7 @@ import { getBooks } from '@/api/book'
 import { options } from './options'
 import Dialog from './components/dialog.vue'
 import { isNull } from '@/utils/filters'
+import { useRouter } from 'vue-router'
 
 const queryForm = ref({
   query: '',
@@ -126,6 +132,15 @@ const handleDialogValue = (row) => {
   }
 
   dialogVisible.value = true
+}
+
+const router = useRouter()
+const showChapterTitles = (row) => {
+  // router.push，query方法传值，name指定要传到的页面
+  router.push({
+    name: 'chapterTitles',
+    query: row
+  })
 }
 </script>
 

@@ -11,7 +11,9 @@ export default {
     sandian: '散点地图',
     xiazuan: '下钻地图',
     xzsd: '下钻散点地图',
-    books: '小说管理'
+    books: '小说管理',
+    chapterTitles: '章节列表',
+    chapterInfo: '章节内容'
   },
   login: {
     title: '用户登录',
