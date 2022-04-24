@@ -80,6 +80,9 @@ module.exports = {
     // 设置默认端口
     port: 8080,
     https: false,
+    // 跨域、内网穿透配置
+    historyApiFallback: true,
+    allowedHosts: 'all',
     // 设置代理
     proxy: {
       '/api': {

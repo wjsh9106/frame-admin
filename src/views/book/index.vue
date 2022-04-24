@@ -47,6 +47,9 @@
           <el-button type="primary" size="small" @click="showChapterTitles(row)"
             >章节列表</el-button
           >
+          <el-button type="primary" size="small" @click="showUpload"
+            >上传</el-button
+          >
         </template>
       </el-table-column>
     </el-table>
@@ -140,6 +143,12 @@ const showChapterTitles = (row) => {
   router.push({
     name: 'chapterTitles',
     query: row
+  })
+}
+
+const showUpload = () => {
+  router.push({
+    name: 'upload'
   })
 }
 </script>

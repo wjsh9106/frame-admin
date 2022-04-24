@@ -71,6 +71,11 @@ const routes = [
         path: 'chapterInfo',
         name: 'chapterInfo',
         component: () => import('@/views/book/chapterInfo.vue')
+      },
+      {
+        path: 'upload',
+        name: 'upload',
+        component: () => import('@/views/book/upload.vue')
       }
     ]
   }
