@@ -107,12 +107,13 @@ $cursor: #fff;
     }
 
     ::v-deep .el-input {
-      display: inline-block;
+      // display: inline-block;
       height: 47px;
       width: 85%;
 
       input {
-        background: transparent;
+        background-clip: content-box;
+        background: #293444;
         border: 0px;
         -webkit-appearance: none;
         border-radius: 0px;
@@ -122,6 +123,10 @@ $cursor: #fff;
         caret-color: $cursor;
         box-shadow: 0 0 0 0px;
       }
+    }
+
+    ::v-deep .el-input__wrapper {
+      padding: 0;
     }
     .login-button {
       width: 100%;
