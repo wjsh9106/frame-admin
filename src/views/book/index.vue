@@ -45,10 +45,13 @@
         </template>
         <template #default="{ row }" v-else-if="item.prop === 'action'">
           <el-button type="primary" size="small" @click="showChapterTitles(row)"
-            >章节列表</el-button
+            >章节</el-button
           >
           <el-button type="primary" size="small" @click="showUpload"
             >上传</el-button
+          >
+          <el-button type="primary" size="small" @click="showMarkdown"
+            >markdown</el-button
           >
         </template>
       </el-table-column>
@@ -149,6 +152,12 @@ const showChapterTitles = (row) => {
 const showUpload = () => {
   router.push({
     name: 'upload'
+  })
+}
+
+const showMarkdown = () => {
+  router.push({
+    name: 'markdown'
   })
 }
 </script>
