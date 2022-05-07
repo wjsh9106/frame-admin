@@ -11,6 +11,8 @@
   "dependencies": {
     "@element-plus/icons-vue": "^1.1.1",
     "@kangc/v-md-editor": "^2.3.15",
+    "@wangeditor/editor": "^5.0.1",
+    "@wangeditor/editor-for-vue": "^5.1.11",
     "axios": "^0.26.0",
     "core-js": "^3.8.3",
     "dayjs": "^1.11.0",

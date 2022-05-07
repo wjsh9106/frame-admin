@@ -81,6 +81,11 @@ const routes = [
         path: 'markdown',
         name: 'markdown',
         component: () => import('@/views/book/markdown.vue')
+      },
+      {
+        path: 'wangeditor',
+        name: 'wangeditor',
+        component: () => import('@/views/book/wangeditor.vue')
       }
     ]
   }

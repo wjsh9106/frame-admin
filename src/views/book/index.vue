@@ -53,6 +53,9 @@
           <el-button type="primary" size="small" @click="showMarkdown"
             >markdown</el-button
           >
+          <el-button type="primary" size="small" @click="showFuwenben"
+            >富文本</el-button
+          >
         </template>
       </el-table-column>
     </el-table>
@@ -158,6 +161,12 @@ const showUpload = () => {
 const showMarkdown = () => {
   router.push({
     name: 'markdown'
+  })
+}
+
+const showFuwenben = () => {
+  router.push({
+    name: 'wangeditor'
   })
 }
 </script>
